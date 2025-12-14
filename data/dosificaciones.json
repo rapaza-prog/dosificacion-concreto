@@ -1,0 +1,6 @@
+{
+  "175": { "cemento": 6.5, "arena": 0.56, "grava": 0.84, "agua": 185 },
+  "210": { "cemento": 7.5, "arena": 0.54, "grava": 0.81, "agua": 180 },
+  "245": { "cemento": 8.5, "arena": 0.50, "grava": 0.75, "agua": 175 },
+  "280": { "cemento": 9.5, "arena": 0.48, "grava": 0.72, "agua": 170 }
+}
