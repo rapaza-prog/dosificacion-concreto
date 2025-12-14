@@ -1,0 +1,6 @@
+{
+  "lata": { "nombre": "Lata", "volumen_m3": 0.017 },
+  "balde": { "nombre": "Balde", "volumen_m3": 0.020 },
+  "cubo": { "nombre": "Cubo", "volumen_m3": 0.033 },
+  "carretilla": { "nombre": "Carretilla", "volumen_m3": 0.065 }
+}

@@ -4,6 +4,20 @@ from calculos.dosificacion import calcular_materiales
 st.title("🧱 Dosificación de Concreto – RNE E.060")
 
 st.subheader("Datos de la losa")
+st.subheader("Opciones de obra")
+
+usar_desperdicio = st.checkbox("Considerar factor de desperdicio")
+
+desperdicio = 0
+if usar_desperdicio:
+    desperdicio = st.slider(
+        "Porcentaje de desperdicio (%)",
+        min_value=0,
+        max_value=15,
+        value=5
+    )
+
+
 area = st.number_input("Área (m²)", min_value=1.0, value=100.0)
 espesor = st.number_input("Espesor (m)", min_value=0.05, value=0.20)
 fc = st.selectbox("Resistencia f'c (kg/cm²)", [175, 210, 245, 280])
@@ -13,7 +27,7 @@ st.write(f"📦 **Volumen de concreto:** {volumen:.2f} m³")
 
 if st.button("Calcular dosificación"):
     try:
-        resultados = calcular_materiales(volumen, fc)
+        resultados = calcular_materiales(volumen, fc, desperdicio)
 
         st.success("Resultados según RNE E.060")
         st.write(f"🪨 Cemento: **{resultados['cemento_bolsas']} bolsas**")
@@ -25,3 +39,5 @@ if st.button("Calcular dosificación"):
         st.info("Dosificación estimada. No reemplaza diseño de mezcla de laboratorio.")
     except Exception as e:
         st.error(str(e))
+if desperdicio > 0:
+    st.warning(f"Incluye {desperdicio}% de desperdicio")
