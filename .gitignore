@@ -1,0 +1,14 @@
+# Entorno virtual
+venv/
+__pycache__/
+*.pyc
+
+# Streamlit
+.streamlit/
+
+# VS Code
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
